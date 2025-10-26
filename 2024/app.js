@@ -41,7 +41,7 @@ function renderTimeline(memos) {
         imgavatar.className = 'imgavatarclass';
 
         const avatarLink = document.createElement("a");
-        avatarLink.href = "https://zhaohao.online";
+        avatarLink.href = "https://zhaohao.online/2024/";
         avatarLink.setAttribute('target', '_blank');
 
         avatarLink.appendChild(imgavatar);
