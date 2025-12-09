@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="/assets/svg-mouse.svg" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/assets/svg-mouse.svg" />
     <link id="favicon" rel="icon" href="/assets/svg-mouse.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/fonts/fonts.css">
     <title>zhaohao.online</title>
     <style>
         a {
@@ -19,7 +20,7 @@
 
         .main {
             text-align: center;
-            font-family: "Courier New", Courier, monospace;
+            font-family: "Bold Dot Digital-7", "Courier New", Courier, monospace;
             margin-top: 10%;
         }
 
@@ -38,62 +39,72 @@
         }
 
         .colorfultxt {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            display: inline;
-            /*display: table;*/
             position: relative;
-            font-size: 1em;
-            font-weight: 400;
-            letter-spacing: -0.015em;
-            color: #000;
-            filter: brightness(1.1);
-            z-index: 1;
+            display: inline-block;
+            isolation: isolate;
+            /* 创建新的堆叠上下文 */
         }
 
         .colorfultxt:before {
             content: attr(data-text);
             position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg,
-                    #00cfff,
-                    #7cb661,
-                    #21b568,
-                    #c6e48b);
-            filter: blur(20px) brightness(1);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, #00cfff, #aeff00, #12d1be, #d1ece9);
+
+
+            -webkit-filter: blur(15px) brightness(1);
+            filter: blur(15px) brightness(1);
             opacity: 0.7;
             border-radius: 100px;
             z-index: -1;
             pointer-events: none;
             background-size: 300% 300%;
+            -webkit-animation: gradientShift 10s ease-in-out infinite;
             animation: gradientShift 10s ease-in-out infinite;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
         }
 
         .colorfultxt:after {
             content: attr(data-text);
             position: absolute;
-            inset: 0;
-            font-size: inherit;
-            font-weight: inherit;
-            font-family: inherit;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font: inherit;
             letter-spacing: inherit;
-            background: linear-gradient(90deg,
-                    #00cfff,
-                    #7cb661,
-                    #21b568,
-                    #c6e48b);
-            filter: blur(20px) brightness(1.3);
-            border-radius: 50px;
-            background-clip: text;
+            background: linear-gradient(90deg, #00cfff, #aeff00, #12d1be, #d1ece9);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            mix-blend-mode: color-burn;
-
+            color: transparent;
+            -webkit-mix-blend-mode: difference;
+            mix-blend-mode: difference;
+            -webkit-filter: blur(0.5px) brightness(1.3);
+            filter: blur(0.5px) brightness(1.3);
             z-index: 0;
             pointer-events: none;
             background-size: 300% 300%;
+            -webkit-animation: gradientShift 10s ease-in-out infinite;
             animation: gradientShift 10s ease-in-out infinite;
+        }
+
+        @-webkit-keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         @keyframes gradientShift {
@@ -105,9 +116,16 @@
                 background-position: 100% 50%;
             }
 
-            to {
+            100% {
                 background-position: 0% 50%;
             }
+        }
+
+        .colorfultxt a {
+            font-weight: 600;
+            font-family: "Bold Dot Digital-7", monospace, "Century Gothic", "LXGW WenKai Screen", sans-serif;
+            color: #1a4a4a;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -145,10 +163,9 @@
                         原来你也在这里......
                     </td>
                 </tr>
-                <tr style="display: none;">
-                    <td class="gradient-horizontal-text" colspan="2" style="font-size: 11px; text-align: center">
-                        仅仅为了记录，记录下消逝了的和即将消逝的点点滴滴，在回首的时候，能够知道，我曾经来过……
-                        <br />
+
+                <tr>
+                    <td class="gradient-horizontal-text" colspan="2" style="text-align: center">
                         You don't need a reason,let the day go on and on...
                     </td>
                 </tr>
@@ -162,31 +179,23 @@
                 </tr>
 
                 <tr class="null">
-                    <td style="text-align: right" class="colorfultxt">
+                    <td style="text-align: right" class="gradient-horizontal-text">
                         <a href="/">zhaohao.online</a>
                     </td>
-                    <td style="text-align: left; font-size: 12px">
-                        [Home]
+                    <td style="text-align: left; font-size:11px; font-family: 'Courier New', Courier, monospace;">
+                        [HOME]
                     </td>
                 </tr>
 
                 <tr class="null">
                     <td style="text-align: right" class="gradient-horizontal-text">
-                        <a href="https://www.zlog.net/" target="_blank">www.zlog.net</a>
+                        <a href="https://zlog.net/" target="_blank">zlog.net</a>
                     </td>
-                    <td style="text-align: left; font-size: 12px">
-                        [Blog]
+                    <td style="text-align: left; font-size:11px; font-family: 'Courier New', Courier, monospace;">
+                        [BLOG]
                     </td>
                 </tr>
 
-                <tr class="null">
-                    <td style="text-align: right" class="gradient-horizontal-text">
-                        <a href="https://memo.zlog.net/" target="_blank">memo.zlog.net</a>
-                    </td>
-                    <td style="text-align: left; font-size: 12px">
-                        [Memo]
-                    </td>
-                </tr>
 
                 <tr>
                     <td style="text-align: right"></td>
@@ -197,8 +206,8 @@
                         <a href="javascript:location.href%20='mailto:'+['hao','zhao.im'].join('@')">
                             hao(at)zhao.im</a>
                     </td>
-                    <td style="text-align: left; font-size: 12px">
-                        [Mail]
+                    <td style="text-align: left; font-size:11px; font-family: 'Courier New', Courier, monospace;">
+                        [MAIL]
                     </td>
                 </tr>
                 <tr>
@@ -211,7 +220,7 @@
                     <td style="text-align: left"></td>
                 </tr>
                 <tr style="display: none; text-align: right">
-                    <td colspan="2" style="text-align: center; font-size: 10px">
+                    <td colspan="2" style="text-align: center;">
                         [zhaohao.online |
                         <a style="color: #000" href="https://zhao.im/" target="_blank">ZHAO.IM</a>]
                     </td>
