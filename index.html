@@ -28,12 +28,20 @@
             background: linear-gradient(to bottom,
                     rgb(66, 133, 244) 25%,
                     rgb(0, 200, 50) 75%);
+
+            background-clip: text;
+            color: transparent;
+
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .gradient-horizontal-text {
             background: linear-gradient(90deg, #2297ff, #21b568);
+
+            background-clip: text;
+            color: transparent;
+
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -42,7 +50,6 @@
             position: relative;
             display: inline-block;
             isolation: isolate;
-            /* 创建新的堆叠上下文 */
         }
 
         .colorfultxt:before {
@@ -122,15 +129,14 @@
         }
 
         .colorfultxt a {
-            font-weight: 600;
             font-family: "Bold Dot Digital-7", monospace, "Century Gothic", "LXGW WenKai Screen", sans-serif;
-            color: #1a4a4a;
+            color: #008090;
             text-decoration: none;
         }
     </style>
 </head>
 
-<body style="background: #E9EDED;">
+<body>
     <script>
         const favicons = [
             '001.svg',
@@ -187,8 +193,8 @@
                     </td>
                 </tr>
 
-                <tr class="null">
-                    <td style="text-align: right" class="gradient-horizontal-text">
+                <tr class="null" style="text-align: right;">
+                    <td style="text-align: right" class="colorfultxt">
                         <a href="https://zlog.net/" target="_blank">zlog.net</a>
                     </td>
                     <td style="text-align: left; font-size:11px; font-family: 'Courier New', Courier, monospace;">
@@ -196,6 +202,15 @@
                     </td>
                 </tr>
 
+
+                <tr class="null">
+                    <td style="text-align: right" class="gradient-horizontal-text">
+                        <a href="https://memo.zlog.net/" target="_blank">memo.zlog.net</a>
+                    </td>
+                    <td style="text-align: left; font-size:11px; font-family: 'Courier New', Courier, monospace;">
+                        [MEMO]
+                    </td>
+                </tr>
 
                 <tr>
                     <td style="text-align: right"></td>
